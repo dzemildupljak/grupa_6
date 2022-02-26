@@ -1259,97 +1259,496 @@
 // Change the .currentBook property to point to what's in the .nextBook property
 // Change the .nextBook property to be the first unread book you find in the list of books
 
-class Book {
-  constructor(title = "", genre, author) {
-    this.title = title;
-    this.genre = genre;
-    this.author = author;
-    this.read = false;
-    this.read_date = null;
-  }
-}
+// class Book {
+//   constructor(title = "", genre, author) {
+//     this.title = title;
+//     this.genre = genre;
+//     this.author = author;
+//     this.read = false;
+//     this.read_date = null;
+//   }
+// }
 
-class BookLists {
-  constructor() {
-    this.bookShelf = [];
-    this.booksRead = 0;
-    this.notBooksRead = this.bookShelf.length - this.booksRead;
-    this.nextBook = null;
-    this.currBook = null;
-    this.lastBook = null;
-  }
+// class BookLists {
+//   constructor() {
+//     this.bookShelf = [];
+//     this.booksRead = 0;
+//     this.notBooksRead = this.bookShelf.length - this.booksRead;
+//     this.nextBook = null;
+//     this.currBook = null;
+//     this.lastBook = null;
+//   }
 
-  add(book) {
-    if (book instanceof Book) {
-      debugger;
-      this.bookShelf.push(book);
+//   add(book) {
+//     debugger;
+//     if (book instanceof Book) {
+//       debugger;
+//       this.bookShelf.push(book);
 
-      for (let i = 0; i < this.bookShelf.length; i++) {
-        if (!this.bookShelf[i].read) {
-          this.currBook = this.bookShelf[i];
-          if (this.bookShelf[i + 1]) {
-            this.nextBook = this.bookShelf[i + 1];
-          } else {
-            this.nextBook = null;
-          }
-          break;
-        }
-      }
-    } else {
-      console.log("Invalid argument type");
-    }
-  }
+//       for (let i = 0; i < this.bookShelf.length; i++) {
+//         if (!this.bookShelf[i].read) {
+//           this.currBook = this.bookShelf[i];
+//           if (this.bookShelf[i + 1]) {
+//             this.nextBook = this.bookShelf[i + 1];
+//           } else {
+//             this.nextBook = null;
+//           }
+//           break;
+//         }
+//       }
+//     } else {
+//       console.log("Invalid argument type");
+//     }
+//   }
 
-  finishCurrentBook() {
-    for (let i = 0; i < this.bookShelf.length; i++) {
-      const book = this.bookShelf[i];
-      if (book.title === this.currBook.title) {
-        this.bookShelf[i].read = true;
-        this.bookShelf[i].read_date = new Date();
-        this.lastBook = this.currBook;
-        this.currBook = this.nextBook;
-        if (this.bookShelf[i + 1]) {
-          this.nextBook = this.bookShelf[i + 2];
-        }
-        break;
-      }
-    }
-  }
-}
+//   finishCurrentBook() {
+//     for (let i = 0; i < this.bookShelf.length; i++) {
+//       const book = this.bookShelf[i];
+//       if (book.title === this.currBook.title) {
+//         this.bookShelf[i].read = true;
+//         this.bookShelf[i].read_date = new Date();
+//         this.lastBook = this.currBook;
+//         this.currBook = this.nextBook;
+//         if (this.bookShelf[i + 1]) {
+//           this.nextBook = this.bookShelf[i + 2];
+//         }
+//         break;
+//       }
+//     }
+//   }
+// }
 
-b1 = new Book("HP1", "magic", "JKR");
-b2 = new Book("HP2", "magic", "JKR");
-b3 = new Book("HP3", "magic", "JKR");
-b4 = new Book("HP4", "magic", "JKR");
-b5 = new Book("HP5", "magic", "JKR");
+// b1 = new Book("HP1", "magic", "JKR");
+// b2 = new Book("HP2", "magic", "JKR");
+// b3 = new Book("HP3", "magic", "JKR");
+// b4 = new Book("HP4", "magic", "JKR");
+// b5 = new Book("HP5", "magic", "JKR");
 
-bl = new BookLists();
+// bl = new BookLists();
 
-bl.add(b1);
-bl.add(b2);
-bl.add(b3);
-bl.add(b4);
-bl.add(b5);
+// bl.add(b1);
+// bl.add(b2);
+// bl.add(b3);
+// bl.add(b4);
+// bl.add(b5);
 
-console.log(bl.lastBook);
-console.log(bl.currBook);
-console.log(bl.nextBook);
+// console.log(bl.lastBook);
+// console.log(bl.currBook);
+// console.log(bl.nextBook);
 
-bl.finishCurrentBook();
+// bl.finishCurrentBook();
 
-console.log("=========================");
-console.log(bl.lastBook);
-console.log(bl.currBook);
-console.log(bl.nextBook);
+// console.log("=========================");
+// console.log(bl.lastBook);
+// console.log(bl.currBook);
+// console.log(bl.nextBook);
 
-bl.finishCurrentBook();
-bl.finishCurrentBook();
-bl.finishCurrentBook();
-bl.finishCurrentBook();
+// bl.finishCurrentBook();
+// bl.finishCurrentBook();
+// bl.finishCurrentBook();
+// bl.finishCurrentBook();
 
-console.log("=========================");
-console.log(bl.lastBook);
-console.log(bl.currBook);
-console.log(bl.nextBook);
+// console.log("=========================");
+// console.log(bl.lastBook);
+// console.log(bl.currBook);
+// console.log(bl.nextBook);
 
-console.log(bl.bookShelf);
+// console.log(bl.bookShelf);
+
+// o1 = {
+//   name: "dzemil",
+//   surmane: "dupljak",
+//   location: "np",
+//   info: function () {
+//     console.log(this.name, this.surmane);
+//   },
+// };
+
+// o1.info();
+
+// let p1 = {
+//   firstName: "John",
+//   lastName: "Smith",
+// };
+
+// let p2 = {
+//   firstName: "Ann",
+//   lastName: "Brown",
+// };
+
+// function sayWelcome(greeting, arg2) {
+//   console.log(arg2.subObj);
+//   console.log(greeting + " " + this.firstName + " " + this.lastName);
+// }
+
+// sayWelcome.call(p1, "Welcome", { subObj: "name" }); // Welcome John Smith
+
+// let p1 = {
+//   firstName: "John",
+//   lastName: "Smith",
+// };
+// let p2 = {
+//   firstName: "Ann",
+//   lastName: "Brown",
+// };
+// function sayWelcome(greeting) {
+//   console.log(greeting + " " + this.firstName + " " + this.lastName);
+// }
+// sayWelcome.apply(p1); // Welcome John Smith
+// // sayWelcome.apply(p2, ["Welcome"]); // Welcome Ann Brown
+
+// let p1 = {
+//   firstName: "John",
+//   lastName: "Smith",
+// };
+// let p2 = {
+//   firstName: "Ann",
+//   lastName: "Brown",
+// };
+
+// function sayWelcome() {
+//   console.log("Welcome " + this.firstName + " " + this.lastName);
+// }
+
+// let sayWelcomeJohn = sayWelcome.bind(p1);
+// let sayWelcomeAnn = sayWelcome.bind(p2);
+
+// sayWelcomeJohn(); // Welcome John Smith
+// sayWelcomeAnn(); // Welcome Ann Brown
+
+// function add(book) {
+//   if (book instanceof Book) {
+//     debugger;
+//     this.bookShelf.push(book);
+
+//     for (let i = 0; i < this.bookShelf.length; i++) {
+//       if (!this.bookShelf[i].read) {
+//         this.currBook = this.bookShelf[i];
+//         if (this.bookShelf[i + 1]) {
+//           this.nextBook = this.bookShelf[i + 1];
+//         } else {
+//           this.nextBook = null;
+//         }
+//         break;
+//       }
+//     }
+//   } else {
+//     console.log("Invalid argument type");
+//   }
+// }
+
+// bookShelf = {
+//   bookShelf: [],
+//   booksRead: 0,
+//   notBooksRead: this.bookShelf.length - this.booksRead,
+//   nextBook: null,
+//   currBook: null,
+//   lastBook: null,
+// };
+
+// bookShelf2 = {
+//   bookShelf: [],
+//   booksRead: 0,
+//   notBooksRead: this.bookShelf.length - this.booksRead,
+//   nextBook: null,
+//   currBook: null,
+//   lastBook: null,
+// };
+
+// add.call(bookShelf, {});
+// add.call(bookShelf2, {});
+// var a;
+// a = 10;
+
+// console.log(a);
+
+// a = 11;
+
+// function innerFunc() {
+//   console.log("inner function");
+// }
+
+// function func1(arg) {
+//   innerFunc();
+//   console.log("FUNC", arg);
+// }
+
+// function main() {
+//   func1(1);
+//   innerFunc();
+//   console.log("main end ====");
+// }
+
+// main();
+
+// function someJob() {
+//   for (let i = 0; i < 2000000000; i++) {}
+//   console.log("job finished");
+// }
+
+// console.log("start");
+// someJob();
+// console.log("jos neki posao");
+// console.log("komanda 1");
+
+// setTimeout(() => {
+//   console.log("komanda 21");
+// }, 1000);
+
+// setTimeout(() => {
+//   console.log("komanda 22");
+// }, 800);
+
+// console.log("komanda 3");
+// console.log("komanda 4");
+
+// console.log("komanda 1");
+
+// setTimeout(() => {
+//   console.log("komanda 21");
+// }, 1001);
+
+// setTimeout(() => {
+//   console.log("komanda 22");
+// }, 1000);
+
+// console.log("komanda 3");
+// console.log("komanda 4");
+
+// const work = async () => {
+//   console.log(1111111);
+//   await sleep(2000);
+//   console.log(2222222);
+// };
+
+// await work();
+
+// clb = function () {
+//   console.log("callback!!!!");
+// };
+
+// clb2 = function () {
+//   console.log("calback2222222");
+// };
+
+// function work(radnjaPosle) {
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   for (let i = 0; i < 1099000000; i++) {}
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+
+//   radnjaPosle();
+// }
+
+// work(clb);
+// work(clb2);
+
+// // setTimeout(clb, 1000);
+
+// func1 = () => {
+//   console.log("func1");
+// };
+
+// function work(radnjaPosle) {
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   for (let i = 0; i < 1099000000; i++) {}
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+//   console.log("pripreman neka");
+
+//   radnjaPosle();
+// }
+
+// work(() => {
+//   console.log("func1");
+// });
+
+// setTimeout(() => {
+//   console.log("adssad");
+//   console.log("adssad");
+// }, 1000);
+
+// timeoutID = setTimeout(
+//   (arg1) => {
+//     console.log("callback function");
+//     console.log(arg1);
+//   },
+//   2 * 1000,
+//   "That was really slow!"
+// );
+
+// for (let i = 0; i < cars.length; i++) {
+//   const c = cars[i];
+//   console.log(c);
+//   console.log(i);
+// }
+// console.log("=======================");
+
+// cars.forEach((el, index) => {
+//   console.log(el);
+//   console.log(index);
+// });
+// var cars;
+
+// function imefunkcije(arg1, index) {
+//   console.log(arg1);
+//   index && console.log(index);
+// }
+
+// const cars = ["BMW", 123, false, "Saab", 12.5, "Jos jedan el"];
+
+// cars.forEach((c, i, arr2) => {
+//   console.log(c, i, arr2);
+// });
+
+// function forEachCustom(arr, callbackfn) {
+//   for (let i = 0; i < arr.length; i++) {
+//     callbackfn(arr[i]);
+//   }
+// }
+
+// forEachCustom(cars, (arg1, index) => {
+//   console.log(arg1);
+//   index && console.log(index);
+// });
+// function wash(callback) {
+//   setTimeout(function () {
+//     console.log("wash");
+//     callback();
+//   }, 3000);
+// }
+
+// function dry(callback) {
+//   setTimeout(function () {
+//     console.log("dry");
+//     callback();
+//   }, 2000);
+// }
+
+// function fold(callback) {
+//   setTimeout(function () {
+//     console.log("fold");
+//     callback();
+//   }, 1000);
+// }
+
+// function doLaundry(actions) {
+//   actions[0](() => {
+//     actions[1](() => {
+//       actions[2](() => {
+//         console.log("Done");
+//       });
+//     });
+//   });
+// }
+
+// doLaundry([wash, dry, fold]);
+
+// function f1() {
+//   console.log("F1");
+// }
+
+// const job = (clb) => {
+//   console.log("job");
+//   console.log("job");
+//   console.log("job");
+//   console.log("job");
+//   clb();
+// };
+
+// job(() => {
+//   console.log("clb nameless");
+// });
+
+// const cars = ["BMW", 123, false, "Saab", 12.5, "Jos jedan el"];
+
+// arr1 = cars.map((el) => {
+//   if (typeof el === "number") {
+//     return el;
+//   }
+// });
+
+// arr2 = cars.filter((el) => {
+//   if (typeof el === "number") {
+//     return el;
+//   }
+// });
+
+// console.log(arr1);
+// console.log(arr2);
+
+// arr1 = [1, 2, 3, 4, 5, 5, 7, 6, 5, 5, 5, 5, 5];
+
+// res = arr1.some((el) => {
+//   return el > 6;
+// });
+
+// res2 = arr1.every((el) => {
+//   return el > 0;
+// });
+
+// // console.log(arr1);
+// // console.log(res);
+// // console.log(res2);
+
+// if (
+//   !arr1.every((el) => {
+//     return el > 1;
+//   })
+// ) {
+//   console.log("Ne ispunjavaju svi elementi dati uslov");
+// } else {
+//   console.log("Ispunjavaju svi elementi dati uslov");
+// }
+
+// const array1 = [1, 2, 3, 4];
+
+// // 0 + 1 + 2 + 3 + 4
+
+// const sumWithInitial = array1.reduce((previousValue, currentValue) => {
+//   return previousValue + currentValue;
+// }, 0);
+
+// console.log(sumWithInitial / array1.length);
+// // expected output: 10
+
+// function find_missing(arr1, arr2) {
+//   arr2.forEach((el) => {
+//     if (arr1.includes(el)) {
+//       arr1.splice(arr1.indexOf(el), 1);
+//     }
+//   });
+
+//   return arr1[0];
+// }
+
+// res = find_missing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]);
+
+// res2 = find_missing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]);
+
+// console.log(res);
+// console.log(res2);
+// console.log(find_missing([0, 0, 0, 0, 0], [0, 0, 0, 0]));
+
+const heros = [
+  { name: "Spider-Man" },
+  { name: "Thor" },
+  { name: "Black Panther" },
+  { name: "Captain Marvel" },
+];
+
+const heros2 = heros.map((el, index) => {
+  return {
+    id: index,
+    hero: el.name,
+  };
+});
+
+console.log(heros2);
